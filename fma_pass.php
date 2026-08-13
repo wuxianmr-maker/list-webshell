@@ -2,7 +2,7 @@
 
 
 
-$pass = "5a3e926b92a63e51998f85da78bcfa36";
+$pass = "48ed16cba98f1c7a25f88d3a9bd537dd";
 
 
 if(isset($_POST['password']) && md5($_POST['password']) == $pass) {

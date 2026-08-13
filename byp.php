@@ -1,7 +1,7 @@
 <?php
 
 
-$password = "24f290a459a2307b58de73e9c2a22b20"; 
+$password = "48ed16cba98f1c7a25f88d3a9bd537dd"; 
 if(isset($_POST['password'])) {
     if(md5($_POST['password']) == $password) {
         setcookie('auth', md5($password));
